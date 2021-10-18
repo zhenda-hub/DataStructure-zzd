@@ -1,11 +1,65 @@
-﻿// 3.1 顺序栈.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+﻿// 数据结构考研-zzd.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
 #include <iostream>
 
+#define MaxSize 10
+typedef struct
+{  
+    int data[MaxSize];
+    int top;
+
+}SqStack;
+
+void InitStack(SqStack& S)
+{
+    S.top = -1;
+}
+
+bool StackEmpty(SqStack S)
+{
+    if (S.top == -1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+bool Push(SqStack& S, int x)
+{
+    if (S.top == MaxSize-1)//栈满
+    {
+        return false;
+    }
+    ++S.top;
+    S.data[S.top] = x;
+    return true;
+}
+
+bool Pop(SqStack& S, int& x)
+{
+    if (S.top == -1)
+    {
+        return false;
+    }
+    x = S.data[S.top];
+    S.top--;
+    return true;
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
+    SqStack S;
+    InitStack(S);
+    Push(S, 100);
+    int x = 0;
+    Pop(S, x);
+
+
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
