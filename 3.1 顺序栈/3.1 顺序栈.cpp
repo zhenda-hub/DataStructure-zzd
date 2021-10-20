@@ -50,6 +50,11 @@ bool Pop(SqStack& S, int& x)
     return true;
 }
 
+void GetTop(SqStack& S, int& x)
+{
+    x = S.data[S.top];
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
@@ -58,6 +63,8 @@ int main()
     Push(S, 100);
     int x = 0;
     Pop(S, x);
+    int top;
+    GetTop(S, top);
 
 
 }

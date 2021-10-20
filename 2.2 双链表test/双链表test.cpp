@@ -86,7 +86,6 @@ bool DestroyDLinklist(Dlinklist& L)
     
 }
 
-
 int main()
 {
     Dlinklist L;
